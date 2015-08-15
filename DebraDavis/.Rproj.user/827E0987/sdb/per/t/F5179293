@@ -1,0 +1,17 @@
+{
+    "contents" : "rm(list=ls())\n\n#install.packages(\"vegan\") # Installs the library for you\nlibrary(vegan) # calls the library\n\nsetwd('~/Desktop/DebraDavis') # Update directory\nnimo <- read.csv('NIMO_2015.csv') # Import Datafile\n\n\n\n# Plot some Environmental Variables\npar(mfrow=c(2,2))\nplot(nimo$Nitrite, ylab=\"Nitrite\")\nplot(nimo$Salinity, ylab=\"Salinity\")\nplot(nimo$Sulphide, ylab=\"Sulphide\")\nplot(nimo$Soil.Temp, ylab=\"Soil Temperature\")\n\n# What are we doing here?\nplot(nimo$Nitrite[nimo$X4 == 1], ylab=\"Nitrite\")\n\ntest <- aggregate(nimo[,8:15], by=list(as.factor(nimo[, 23])), FUN=mean, na.rm=TRUE, na.action=NULL)\n\nna.action\n",
+    "created" : 1439676592049.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "964549135",
+    "id" : "F5179293",
+    "lastKnownWriteTime" : 1439678392,
+    "path" : "~/Desktop/DebraDavis/NIMO_Analysis_2015.R",
+    "project_path" : "NIMO_Analysis_2015.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
